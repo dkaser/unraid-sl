@@ -1,0 +1,53 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN>
+
+<PLUGIN 
+  name="sl"
+  author="Derek Kaser"
+  version="2024.10.03"
+  pluginURL="https://raw.githubusercontent.com/dkaser/unraid-sl/main/plugin/sl.plg"
+>
+
+<CHANGES>
+<![CDATA[
+###2024.10.03###
+- Release
+]]>
+</CHANGES>
+
+<FILE Name="/boot/config/plugins/sl/sl-1.0.0-noarch-1.txz">
+<URL>https://github.com/dkaser/unraid-sl/releases/download/1.0.0/sl-1.0.0-noarch-1.txz</URL>
+<SHA256>ef74b47f1a06e79af66803086f70950339e0548f329840e44a46ef103e644c1d</SHA256>
+</FILE>
+
+<!--
+The 'install' script.
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+<![CDATA[
+upgradepkg --install-new --reinstall /boot/config/plugins/sl/sl-1.0.0-noarch-1.txz
+
+echo ""
+echo "----------------------------------------------------"
+echo " sl has been installed."
+echo " Version: 2024.10.03"
+echo "----------------------------------------------------"
+echo ""
+]]>
+</INLINE>
+</FILE>
+
+<!--
+The 'remove' script.
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+<![CDATA[
+removepkg sl
+
+]]>
+</INLINE>
+</FILE>
+
+</PLUGIN>
