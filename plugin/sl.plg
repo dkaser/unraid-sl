@@ -4,36 +4,33 @@
 <PLUGIN 
   name="sl"
   author="Derek Kaser"
-  version="2024.10.03"
+  version="2024.10.04"
   pluginURL="https://raw.githubusercontent.com/dkaser/unraid-sl/main/plugin/sl.plg"
+  support="https://forums.unraid.net/profile/244077-edacerton/"
+  icon="fa-train"
 >
 
 <CHANGES>
 <![CDATA[
+###2024.10.04###
+- Prettier install
+
 ###2024.10.03###
 - Release
 ]]>
 </CHANGES>
 
-<FILE Name="/boot/config/plugins/sl/sl-5.0.2-amd64-1.txz">
+<FILE Name="/boot/config/plugins/sl/sl-5.0.2-amd64-1.txz" Run="upgradepkg --install-new">
 <URL>https://github.com/dkaser/unraid-sl/releases/download/5.0.2/sl-5.0.2-amd64-1.txz</URL>
 <SHA256>886ba661cc0e7839311fc2c55c3876d6d0919970b8813bac56cdf9f3836c7a26</SHA256>
 </FILE>
 
-<!--
-The 'install' script.
--->
-<FILE Run="/bin/bash">
+<FILE Name="/usr/local/emhttp/plugins/sl/README.md">
 <INLINE>
 <![CDATA[
-upgradepkg --install-new --reinstall /boot/config/plugins/sl/sl-5.0.2-amd64-1.txz
+**Steam Locomotive (sl)**
 
-echo ""
-echo "----------------------------------------------------"
-echo " sl has been installed."
-echo " Version: 2024.10.03"
-echo "----------------------------------------------------"
-echo ""
+Cure your bad habit of mistyping.
 ]]>
 </INLINE>
 </FILE>
@@ -45,6 +42,10 @@ The 'remove' script.
 <INLINE>
 <![CDATA[
 removepkg sl
+
+# Remove possible leftovers
+rm -rf /usr/local/emhttp/plugins/sl;
+rm -rf /boot/config/plugins/sl;
 
 ]]>
 </INLINE>
