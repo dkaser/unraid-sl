@@ -15,9 +15,9 @@
 ]]>
 </CHANGES>
 
-<FILE Name="/boot/config/plugins/sl/sl-1.0.0-noarch-1.txz">
-<URL>https://github.com/dkaser/unraid-sl/releases/download/1.0.0/sl-1.0.0-noarch-1.txz</URL>
-<SHA256>ef74b47f1a06e79af66803086f70950339e0548f329840e44a46ef103e644c1d</SHA256>
+<FILE Name="/boot/config/plugins/sl/sl-5.0.2-amd64-1.txz">
+<URL>https://github.com/dkaser/unraid-sl/releases/download/5.0.2/sl-5.0.2-amd64-1.txz</URL>
+<SHA256>886ba661cc0e7839311fc2c55c3876d6d0919970b8813bac56cdf9f3836c7a26</SHA256>
 </FILE>
 
 <!--
@@ -26,7 +26,7 @@ The 'install' script.
 <FILE Run="/bin/bash">
 <INLINE>
 <![CDATA[
-upgradepkg --install-new --reinstall /boot/config/plugins/sl/sl-1.0.0-noarch-1.txz
+upgradepkg --install-new --reinstall /boot/config/plugins/sl/sl-5.0.2-amd64-1.txz
 
 echo ""
 echo "----------------------------------------------------"
