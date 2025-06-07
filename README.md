@@ -1,3 +1,6 @@
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/dkaser/unraid-sl/total)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/dkaser/unraid-sl/latest/total)
+
 # Build Instructions
 
 1. Download https://github.com/mtoyoda/sl
